@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilos gerais da navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #668dd7;
+            /* Cor de fundo */
+            padding: 0.5rem 1rem;
+            /* Espaçamento interno */
+        }
+
+        /* Estilo do logo */
+        .logo {
+            color: #ffffff;
+            /* Cor do texto */
+            font-size: 1.5rem;
+            /* Tamanho da fonte */
+            text-decoration: none;
+            /* Remove sublinhado */
+        }
+
+        /* Estilo dos links de navegação */
+        .Links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-itens {
+            list-style: none;
+            /* Remove marcadores */
+            display: flex;
+            /* Alinha itens em linha */
+            padding: 0;
+            /* Remove padding */
+            margin: 0;
+            /* Remove margin */
+        }
+
+        .nav-itens li {
+            margin-right: 20px;
+            /* Espaçamento entre itens */
+        }
+
+        .nav-itens a {
+            color: #ffffff;
+            /* Cor do texto */
+            text-decoration: none;
+            /* Remove sublinhado */
+            transition: color 0.3s;
+            /* Efeito de transição suave */
+        }
+
+        .nav-itens a:hover {
+            color: #adb5bd;
+            /* Cor ao passar o mouse */
+        }
+
+        /* Estilo do botão de login */
+        .login {
+            background-color: #a891eb;
+            /* Cor doFundo  */
+            /* border: 1px solid #28a745; /* Borda verde */
+            color: #ffffff;
+            /* Cor do texto verde */
+            padding: 0.375rem 0.75rem;
+            /* Espaçamento do botão */
+            border-radius: 0.25rem;
+            /* Bordas arredondadas */
+            cursor: pointer;
+            /* Muda o cursor */
+            transition: background-color 0.3s, color 0.3s;
+            /* Transição suave */
+        }
+
+        .login:hover {
+            background-color: #fffa7e;
+            /* Fundo verde ao passar o mouse */
+            color: #000000;
+            /* Cor do texto branco ao passar o mouse */
+        }
+
+
+
+        * Estilo dos Containers */
+        .content {
+            display: flex;
+            justify-content: center;
+            /* Centraliza os containers no eixo horizontal */
+            gap: 180px;
+            /* Espaço entre os containers */
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            padding: 20px;
+            width: 25%;
+            /* Cada container ocupa 20% da largura da tela */
+            height: 350px;
+            /* Altura ajustada */
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(0, 0, 0, 0.1);
+            /* Sombra leve à esquerda e na parte de baixo */
+
+            /* display: flex;            Ativa o Flexbox dentro de cada container */
+            justify-content: center;
+            /*  Centraliza horizontalmente os itens dentro do container */
+            align-items: center;
+            /*   Centraliza verticalmente os itens dentro do container */
+            text-align: center;
+            /*   Alinha o texto ao centro */
+        }
+        }
+
+        /* Vídeo incorporado */
+        .container iframe {
+            max-width: 100%;
+            /* Faz o vídeo se ajustar à largura do container */
+            max-height: 200px;
+            /* Limita a altura do vídeo */
+            border-radius: 8px;
+            /* Suaviza as bordas do vídeo */
+        }
+
+        /* .container-left {
+    background-color: #e0f7fa;
+}
+
+.container-middle {
+    background-color: #ffecb3;
+}
+
+.container-right {
+    background-color: #e8f5e9;
+} */
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+                align-items: center;
+                /* Centraliza os containers na direção vertical */
+            }
+
+            .container {
+                width: 80%;
+                /* Os containers ocupam 80% da largura em telas pequenas */
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <nav>
+        <div class="logo">Educacao Sexual nas escolas: Para pais/Responsaveis e Comunidade escolar</div>
+        <div class="Links">
+            <ul class="nav-itens">
+                <li>
+                    <a href="index.html">Pagina Inicial</a>
+                </li>
+                <li>
+                    <a href="material.html">Materiais Didaticos</a>
+                </li>
+                <li>
+                    <a href="inform.html">Potais Seguros</a>
+                </li>
+                <li>
+                    <a href="Cartilha.php">Cartilha</a>
+                </li>
+
+
+                <a href="login.php">
+                    <button class="login" type="submit">Login</button>
+                </a>
+        </div>
+        </ul>
+    </nav>
+
+</head>
+
+<body>
+    <div class="content">
+        <div class="container container-left">
+            <h2>Container 1</h2>
+            <p>Conteúdo do primeiro container.</p>
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/WeguiDMSLbY?si=cTl4wB6aYftQTk9D"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="container container-meio">
+            <h2>Container 2</h2>
+            <p>Conteúdo do segundo container, agora entre os outros dois.</p>
+        </div>
+        <div class="container container-right">
+            <h2>Container 3</h2>
+            <p>Conteúdo do terceiro container.</p>
+        </div>
+    </div>
+
+    <!-- Containers Lado a Lado (Segunda Linha) -->
+    <div class="content">
+        <div class="container container-left">
+            <h2>Container 4</h2>
+            <p>Conteúdo do quarto container.</p>
+        </div>
+        <div class="container container-middle">
+            <h2>Container 5</h2>
+            <p>Conteúdo do quinto container.</p>
+        </div>
+        <div class="container container-right">
+            <h2>Container 6</h2>
+            <p>Conteúdo do sexto container.</p>
+        </div>
+    </div>
+</body>
+
+</html>

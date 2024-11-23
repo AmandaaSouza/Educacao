@@ -1,69 +1,37 @@
 <?php
+
 include('conexao.php');
 
-if(isset($_POST ['email']) || isset ($_POST ['senha']) ){
+if (!session_id()) session_start();
 
-}
-if(strlen ($_POST ['email'])==0 ){
-    Echo "Preencha seu e-mail";
-}
-else if (strlen ($_POST ['senha'])==0 ){
-    Echo "Preencha sua senha";
-}
-else{
-    $email = $mysqli-> real_escape_string ($_POST ['email']);
-    $senha = $mysqli-> real_escape_string ($_POST ['senha']);
+if ($_SESSION["logado"]) header("Location: index.html");
 
-    $sql_code = "SELECT * FROM usuarios where email = '$email' and senha = '$senha'";
-    $sql_query = $mysqli -> query ($sql_code) or die("Falha na execucao do codigo SQL:" .$mysqli->error);
+$email = $_POST["email"];
+$senhaLogin = $_POST["senha"];
 
-$quantidade = $sql_query-> $num_rows;
+echo $senhaLogin;
 
-if($quabtidade == 1){
-$usuario = $sql_query ->fetch-assoc();
-if (!isset($_SESSION)){
-  session_start();
-}
-$_SESSION ['id'] = $usuario ['id'];
-$_SESSION ['nome'] = $usuario ['nome']; 
+$query = mysqli_prepare($mysqli, "SELECT id, nome, email, senha from usuario WHERE email = ?");
+$query->bind_param("s", $email);
 
-heder ("Location: index.html");
-}
-else{
-      echo "falha ao logar! E-mail ou senha incorretos";
-}
+$query->execute();
+$resultado = $query->get_result();
+
+if ($resultado->num_rows > 0) {
+    while ($row = $resultado->fetch_assoc()) {
+        $senha = $row["senha"];
+        $email = $row["email"];
+        $nome = $row["nome"];
+    }
 }
 
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style type="text/css">
-  
-    
-    </style>
-</head>
-<body>
-    
-    <h1>Faça seu login:</h1>
-    <form action="" method= "POST">
-        <p>
-            <label>E-mail </label>
-            <input type="text" name="email">
-        </p>
-        <p>
-            <label>Senha </label>
-            <input type="password" name="senha">
-        </p>
-        <p>
-           
-            <button type="submit">Entrar </button>
-        </p>
 
-    </form>
+if ($senhaLogin === $senha) {
+    $_SESSION['logado'] = true;
+    $_SESSION['nome'] = $nome;
+    $_SESSION['email'] = $email;
 
-</body>
-</html>
+    header("Location: protect.php");
+} else {
+    echo "<script>alert('Nao deu certo');</script>";
+}
