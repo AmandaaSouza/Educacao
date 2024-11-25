@@ -6,6 +6,7 @@ if (!session_id()) session_start();
 
 if ($_SESSION["logado"]) header("Location: index.html");
 
+
 $email = $_POST["email"];
 $senhaLogin = $_POST["senha"];
 
@@ -33,5 +34,6 @@ if ($senhaLogin === $senha) {
 
     header("Location: protect.php");
 } else {
-    echo "<script>alert('Nao deu certo');</script>";
+    echo "<script>alert('Não foi possível completar a operação');</script>";
+    header("Location: Pagina_cadastro.php");
 }
