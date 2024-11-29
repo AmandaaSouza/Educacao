@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Lovelo';
+    src: url('Lovelo-LineBold.woff2') format('woff2'),
+        url('Lovelo-LineBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lovelo';
+    src: url('Lovelo-LineLight.woff2') format('woff2'),
+        url('Lovelo-LineLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lovelo';
+    src: url('Lovelo-LineLight.woff2') format('woff2'),
+        url('Lovelo-LineLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lovelo';
+    src: url('Lovelo-LineBold.woff2') format('woff2'),
+        url('Lovelo-LineBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
