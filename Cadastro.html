@@ -136,7 +136,7 @@
 
             try {
         // Envia a requisição POST para o servidor Node.js usando Axios
-        const response = await axios.post('http://localhost:3000/processar', data);
+        const response = await axios.post('https://serverapi-0arf.onrender.com/processar', data);
 
         // Se a requisição for bem-sucedida, redireciona para a página index.html
         if (response.status === 200) {
