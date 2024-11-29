@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Arch';
+    src: url('Arch.woff2') format('woff2'),
+        url('Arch.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
