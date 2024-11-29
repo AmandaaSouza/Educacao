@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educacao sexual nas escolas</title>
+    <title>Educação sexual nas escolas</title>
 
 <style  type="text/css">
 
@@ -20,15 +20,20 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: #668dd7; /* Cor de fundo */
-    padding: 0.5rem 1rem; /* Espaçamento interno */
+    padding: 1rem 1rem; /*Espaçamento interno */  */
+    /* padding: 10px 20px; */
+    position: relative;
 }
 
 /* Estilo do logo */
 .logo {
     color: #ffffff; /* Cor do texto */
-    font-size: 1.8rem; /* Tamanho da fonte */
+    font-size: 1.5rem; /* Tamanho da fonte */
     text-decoration: none; /* Remove sublinhado */
     font-family: 'Arch', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    max-width: 100%;
 }
 
 /* Estilo dos links de navegação */
@@ -36,6 +41,10 @@ nav {
     display: flex;
     align-items: center;
     font-family: 'Arch', sans-serif;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-itens {
@@ -43,11 +52,18 @@ nav {
     display: flex; /* Alinha itens em linha */
     padding: 0; /* Remove padding */
     margin: 0; /* Remove margin */
+    gap
 }
 
 .nav-itens li {
-    margin-right: 10px; /* Espaçamento entre itens */
+    margin-right: 10 px; /* Espaçamento entre itens */
 }
+
+/* .nav-itens li a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+} */
 
 .nav-itens a {
     color: #ffffff; /* Cor do texto */
@@ -75,6 +91,7 @@ nav {
     cursor: pointer; /* Muda o cursor */
     transition: background-color 0.3s, color 0.3s; /* Transição suave */
     font-family: 'Arch', sans-serif;
+    border: none;
 }
 
 .login:hover {
@@ -85,6 +102,50 @@ nav {
 p {
     font-family: 'Open-Sans', sans-serif;
 }
+/* Ícone de menu */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+/* Responsividade: esconde o menu em telas menores */
+@media (max-width: 768px) {
+    .Links {
+        display: none; /* Esconde a barra de navegação */
+        position: absolute;
+        top: 110px;
+        left: 0; /* Posiciona o menu à esquerda */
+        background-color: #ffffff;
+        flex-direction: column; /* Organiza os itens em coluna */
+        align-items: flex-start; /* Alinha os itens à esquerda */
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-left: 0; /* Garante alinhamento à esquerda */
+    }
+
+    .Links.active {
+        display: flex; /* Exibe o menu ao clicar no gancho */
+    }
+
+    .Links a {
+        display: block; /* Força os links a serem exibidos como blocos */
+        width: 100%; /* Garante que cada link ocupe a largura total do contêiner */
+        padding: 10px 0; /* Espaçamento vertical entre os links */
+        text-align: left; /* Alinha o texto à esquerda */
+        text-decoration: none; /* Remove sublinhado */
+        color: #000000; /* Define a cor do texto */
+        box-sizing: border-box; /* Garante que o padding não quebre o layout */
+        flex-direction: column;  /* Organiza o conteúdo na vertical */
+    }
+
+    .menu-icon {
+        display: block; /* Exibe o ícone de menu */
+    }
+}
+
+   
 
 @font-face {
     font-family: 'LoveloLine';
@@ -153,26 +214,34 @@ body {
 }
 
 </style>
+<script >
+    function toggleMenu() {
+    const links = document.querySelector('.Links');
+    links.classList.toggle('active');
+}
+
+</script>
 
     <nav>
-        <div class="logo">Educacao Sexual nas escolas: Para pais/Responsaveis e Comunidade escolar</div>
+        <div class="logo">EDUCAÇÃO SEXUAL NAS ESCOLAS: PARA PAIS/RESPONSÁVEIS E COMUNIDADE ESCOLAR</div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div> <!-- Ícone de menu -->
         <div class="Links">
           <ul class="nav-itens">
              <li>
-              <a>Pagina Inicial</a>
+              <a>Página Inicial</a>
             </li>
             <li>
-            <a href="material.html">Material Didatico</a>
+            <a href="material.html">Material Didático</a>
               </li>
               <li>
-                <a href="inform.html">Nao e fake</a>
+                <a href="inform.html">Não é fake</a>
               </li>
             <li>
-              <a href="Cartilha.php">Cartilha</a>
+              <a href="Cartilha.html">Cartilha</a>
             </li>
            
           </ul>
-        <a href="Pagina_login.php">
+        <a href="Login.html">
             <button class="login" type="submit">Login</button>
         </a>
         </div>

@@ -1,10 +1,11 @@
+
 <?php
 
-session_start();
+if (!session_id()) session_start();
 
-if (!$_SESSION["logado"]) header("Location: index.html");
+if (isset($_SESSION['logado']) && $_SESSION['logado']) header("Location: index.html");
+
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,12 +16,15 @@ if (!$_SESSION["logado"]) header("Location: index.html");
 /* Corpo da página */
 body {
     font-family: Arial, sans-serif; /* Define a fonte padrão */
-    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Gradiente de fundo */
     height: 100vh; /* Altura da página igual à altura da janela */
     margin: 0; /* Remove margens padrão */
     display: flex; /* Usa Flexbox */
     justify-content: center; /* Centraliza o conteúdo horizontalmente */
     align-items: center; /* Centraliza o conteúdo verticalmente */
+    background-image: url('Img/Fundo.jpg'); /* Caminho da imagem */
+    background-size: cover; /* A imagem vai cobrir toda a tela */
+    /* background-position: center; Centraliza a imagem */
+    background-repeat: no-repeat; /* Impede a repetição da imagem */
 }
 
 /* Formulário */
@@ -83,7 +87,7 @@ form button:hover {
     <?php echo $_SESSION["email"]; ?>
 
     <br>
-
+    <br>
     <strong>Nome:</strong>
     <?php echo $_SESSION["nome"]; ?>
 <br>
