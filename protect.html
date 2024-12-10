@@ -1,0 +1,192 @@
+<?php
+
+if (!session_id()) session_start();
+
+if (isset($_SESSION['logado']) && $_SESSION['logado']) header("Location: index.html");
+
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil</title>
+  <style>
+    /* Corpo da página */
+    body {
+      font-family: Arial, sans-serif;
+      /* Define a fonte padrão */
+      height: 100vh;
+      /* Altura da página igual à altura da janela */
+      margin: 0;
+      /* Remove margens padrão */
+      display: flex;
+      /* Usa Flexbox */
+      justify-content: center;
+      /* Centraliza o conteúdo horizontalmente */
+      align-items: center;
+      /* Centraliza o conteúdo verticalmente */
+      background-image: url('Img/Fundo.jpg');
+      /* Caminho da imagem */
+      background-size: cover;
+      /* A imagem vai cobrir toda a tela */
+      /* background-position: center; Centraliza a imagem */
+      background-repeat: no-repeat;
+      /* Impede a repetição da imagem */
+    }
+    .btn-voltar {
+            position: absolute;
+            /* Coloca o botão de forma absoluta dentro do contêiner */
+            top: 20px;
+            /* Distância de 20px do topo */
+            left: 20px;
+            /* Distância de 20px da esquerda */
+            padding: 10px 20px;
+            /* Preenchimento interno do botão */
+            background: #a891eb;
+            /* Cor de fundo do botão */
+            color: white;
+            /* Cor do texto do botão */
+            font-size: 16px;
+            /* Tamanho da fonte */
+            border: none;
+            /* Remove a borda padrão */
+            border-radius: 5px;
+            /* Bordas arredondadas */
+            cursor: pointer;
+            /* Altera o cursor para indicar que é clicável */
+            transition: background 0.3s ease;
+            /* Transição suave ao mudar a cor de fundo */
+        }
+
+        /* Efeito de hover para o botão de voltar */
+        .btn-voltar:hover {
+            background: #668dd7;
+            /* Muda a cor de fundo quando o botão é sobrevoado */
+        }
+        
+    /* Formulário */
+    form {
+      background: white;
+      /* Fundo branco */
+      padding: 50px 30px;
+      /* Preenchimento interno */
+      border-radius: 10px;
+      /* Bordas arredondadas */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      /* Sombra ao redor do formulário */
+      width: 100%;
+      /* Largura de 100% */
+      max-width: 500px;
+      /* Largura máxima de 500px */
+      text-align: center;
+      /* Centraliza o conteúdo do formulário */
+    }
+
+
+
+    /* Estilização dos parágrafos dentro do formulário */
+    form strong {
+      margin-bottom: 20px;
+      /* Margem embaixo de cada parágrafo */
+      text-align: left;
+      /* Alinha o texto à esquerda */
+    }
+
+    form input {
+      width: 100%;
+      /* Campo ocupa toda a largura do formulário */
+      padding: 15px;
+      /* Preenchimento interno dos campos */
+      border: 1px solid #ccc;
+      /* Borda de 1px e cor cinza */
+      border-radius: 5px;
+      /* Bordas arredondadas */
+      font-size: 16px;
+      /* Tamanho da fonte */
+      outline: none;
+      /* Remove o contorno padrão */
+    }
+
+    /* Efeito de foco nos campos de entrada */
+    / form input:focus {
+      /* border-color: #74ebd5;  Muda a cor da borda para azul claro */
+      box-shadow: 0 0 5px rgba(116, 235, 213, 0.5);
+      /* Adiciona uma leve sombra ao redor do campo */
+    }
+
+    form button {
+      width: 100%;
+      /* Botão ocupa toda a largura */
+      padding: 15px;
+      /* Preenchimento interno do botão */
+      background: black;
+      /* Cor de fundo do botão */
+      color: white;
+      /* Cor do texto */
+      font-size: 18px;
+      /* Tamanho da fonte */
+      border: none;
+      /* Remove a borda padrão */
+      border-radius: 5px;
+      /* Bordas arredondadas */
+      cursor: pointer;
+      /* Indica que o botão é clicável */
+      transition: background 0.3s ease;
+      /* Transição suave de cor */
+    }
+
+    /* Efeito de hover para o botão */
+    form button:hover {
+      background: #fffa7e;
+      /* Muda a cor de fundo quando o botão é sobrevoado */
+      color: black;
+    }
+  </style>
+
+</head>
+
+<body>
+  <button class="btn-voltar" onclick="history.back()">Voltar</button>
+
+  <form action="">
+    <h1>Perfil</h1>
+  
+    <div>
+      <strong>E-mail:</strong>
+      <span id="email"></span>
+
+      <br>
+      <br>
+      <strong>Nome:</strong>
+      <span id="nome"></span>
+      <br>
+      <button type="button" id="logout-button">
+        Sair
+      </button>
+  </form>
+  </div>
+</body>
+<script>
+  // Verifica se o usuário está logado
+  // if (!localStorage.getItem("userLoggedIn") || localStorage.getItem("userLoggedIn") !== "true") {
+  //     window.location.href = "login.html"; // Redireciona para a página de login
+  // }
+
+  // Preenche os dados do perfil
+  document.getElementById("email").textContent = localStorage.getItem("userEmail");
+  document.getElementById("nome").textContent = localStorage.getItem("userNome");
+
+  // Logout
+  document.getElementById("logout-button").addEventListener("click", () => {
+    localStorage.removeItem("logado");
+    localStorage.removeItem("email");
+    localStorage.removeItem("nome");
+    localStorage.removeItem("userLoggedIn");
+
+    window.location.href = "index.html"; // Redireciona para a página de login
+  });
+</script>
+
+</html>
