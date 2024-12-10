@@ -1,287 +1,95 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Educação sexual nas escolas</title>
 
-<style  type="text/css">
-
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-/* Estilos gerais da navbar */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #668dd7; /* Cor de fundo */
-    padding: 1rem 1rem; /*Espaçamento interno */  */
-    /* padding: 10px 20px; */
-    position: relative;
-}
-
-/* Estilo do logo */
-.logo {
-    color: #ffffff; /* Cor do texto */
-    font-size: 1.5rem; /* Tamanho da fonte */
-    text-decoration: none; /* Remove sublinhado */
-    font-family: 'Arch', sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    max-width: 100%;
-}
-
-/* Estilo dos links de navegação */
-.Links {
-    display: flex;
-    align-items: center;
-    font-family: 'Arch', sans-serif;
-    list-style: none;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-itens {
-    list-style: none; /* Remove marcadores */
-    display: flex; /* Alinha itens em linha */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
-    gap
-}
-
-.nav-itens li {
-    margin-right: 10 px; /* Espaçamento entre itens */
-}
-
-/* .nav-itens li a {
-    text-decoration: none;
-    color: #007BFF;
-    font-weight: bold;
-} */
-
-.nav-itens a {
-    color: #ffffff; /* Cor do texto */
-    text-decoration: none; /* Remove sublinhado */
-    transition: color 0.3s; /* Efeito de transição suave */
-    padding: 5px 10px; /* Aumenta o espaço ao redor do texto, você pode ajustar os valores */
-    display: inline-block; /* Garante que o link seja tratado como um bloco para que o padding tenha efeito */
-    
-    
-}
-
-.nav-itens a:hover {
-    color: black; /* Cor ao passar o mouse */
-    background-color: #a891eb;
-    padding: 5px 15px; /* Aumenta o tamanho do campo ao passar o mouse */
-    border-radius: 0.25rem; /* Bordas arredondadas */
-}
-
-/* Estilo do botão de login */
-.login {
-    background-color: #a891eb; /* Cor doFundo  */
-    color: #ffffff; /* Cor do texto verde */
-    padding: 0.375rem 0.75rem; /* Espaçamento do botão */
-    border-radius: 0.25rem; /* Bordas arredondadas */
-    cursor: pointer; /* Muda o cursor */
-    transition: background-color 0.3s, color 0.3s; /* Transição suave */
-    font-family: 'Arch', sans-serif;
-    border: none;
-}
-
-.login:hover {
-    background-color: #fffa7e; /* Fundo verde ao passar o mouse */
-    color: #000000; /* Cor do texto branco ao passar o mouse */
-}
-
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="script.js"></script>
+<style type="text/css">
 p {
-    font-family: 'Open-Sans', sans-serif;
-}
-/* Ícone de menu */
-.menu-icon {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #ffffff;
-}
-
-/* Responsividade: esconde o menu em telas menores */
-@media (max-width: 768px) {
-    .Links {
-        display: none; /* Esconde a barra de navegação */
-        position: absolute;
-        top: 110px;
-        left: 0; /* Posiciona o menu à esquerda */
-        background-color: #ffffff;
-        flex-direction: column; /* Organiza os itens em coluna */
-        align-items: flex-start; /* Alinha os itens à esquerda */
-        padding: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        margin-left: 0; /* Garante alinhamento à esquerda */
-    }
-
-    .Links.active {
-        display: flex; /* Exibe o menu ao clicar no gancho */
-    }
-
-    .Links a {
-        display: block; /* Força os links a serem exibidos como blocos */
-        width: 100%; /* Garante que cada link ocupe a largura total do contêiner */
-        padding: 10px 0; /* Espaçamento vertical entre os links */
-        text-align: left; /* Alinha o texto à esquerda */
-        text-decoration: none; /* Remove sublinhado */
-        color: #000000; /* Define a cor do texto */
-        box-sizing: border-box; /* Garante que o padding não quebre o layout */
-        flex-direction: column;  /* Organiza o conteúdo na vertical */
-    }
-
-    .menu-icon {
-        display: block; /* Exibe o ícone de menu */
-    }
-}
-
-   
-
-@font-face {
-    font-family: 'LoveloLine';
-    src: url('fonts/Lovelo-LineBold.woff') format('woff'),
-         url('fonts/Lovelo-LineBold.woff2') format('woff2'),
-         url('fonts/Lovelo-LineLight.woff') format('woff'),
-         url('fonts/Lovelo-LineLight.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-h1 {
-    font-family: 'LoveloLine', sans-serif;
-}
-
-@font-face {
-    font-family: 'Arch';
-    src: url('font/Arch.woff') format('woff'),
-         url('font/Arch.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-h1 {
-    font-family: 'LoveloLine', sans-serif;
-}
-
-body {
-    background-image: url('Img/Fundo.jpg'); /* Caminho da imagem */
-    background-size: cover; /* A imagem vai cobrir toda a tela */
-     background-position: center;/* Centraliza a imagem */
-    background-repeat: no-repeat; /* Impede a repetição da imagem */
-}
-
-
-
-
-/* Estilo do Container Infinito */
-.infinite-container {
-    display: flex;
-    flex-direction: column;  /* Organiza o conteúdo na vertical */
-    align-items: center;     /* Centraliza os itens horizontalmente */
-    padding: 20px;
-    min-height: 100vh; /* Garante que o container tenha pelo menos a altura da tela */
-    overflow-y: auto; /* Permite a rolagem vertical */
-    background-color: #f4f4f4;
-    height: auto; /* Faz o container crescer conforme o conteúdo */
-}
-
-/* Estilo das Caixas de Conteúdo */
-.content-box {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 10px 0;
-    width: 80%;  /* Controla a largura das caixas de conteúdo */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .content-box {
-        width: 90%; /* Ajusta a largura das caixas em telas pequenas */
-    }
-}
+    text-indent: 2em; /* Define o recuo da primeira linha de cada parágrafo */
+  }
 
 </style>
-<script >
-    function toggleMenu() {
-    const links = document.querySelector('.Links');
-    links.classList.toggle('active');
-}
-
-</script>
-
     <nav>
         <div class="logo">EDUCAÇÃO SEXUAL NAS ESCOLAS: PARA PAIS/RESPONSÁVEIS E COMUNIDADE ESCOLAR</div>
         <div class="menu-icon" onclick="toggleMenu()">☰</div> <!-- Ícone de menu -->
         <div class="Links">
-          <ul class="nav-itens">
-             <li>
-              <a>Página Inicial</a>
-            </li>
-            <li>
-            <a href="material.html">Material Didático</a>
-              </li>
-              <li>
-                <a href="inform.html">Não é fake</a>
-              </li>
-            <li>
-              <a href="Cartilha.html">Cartilha</a>
-            </li>
+            <ul class="nav-itens">
+                <li>
+                    <a href="index.html">Página Inicial</a>
+                </li>
+                <li>
+                    <a href="material.html">Material Didático</a>
+                </li>
+                <li>
+                    <a href="inform.html">Não é fake</a>
+                </li>
+                <li>
+                    <a href="Cartilha.html">Cartilha</a>
+                </li>
+
+            </ul>
+            <a href="Login.html">
+                <button class="login" id="login-button" type="submit">Login</button>
+            </a>
+            <a href="protect.html" id="usuario-logado"><img src="Img/perfil.jpg" width="20px"></a>
            
-          </ul>
-        <a href="Login.html">
-            <button class="login" type="submit">Login</button>
-        </a>
         </div>
-    
-      </nav>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    </nav>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-       <!-- Container Infinito -->
-       <div class="infinite-container">
+    <!-- Container Infinito -->
+    <div class="infinite-container">
         <!-- Exemplo de conteúdo repetido para simular o "infinito" -->
         <div class="content-box">
-            <h1>Lorem ipsum</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-Why do we use it?
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-
-
-Where does it come from?
-Contrary to popular belief, Lorem Ipsum is nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-Why do we use it?
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-
-
-Where does it come from?
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-Why do we use it?
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-
-
-Where does it come from?
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethot simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of eth</p>
+            <h1>Educação Sexual nas Escolas</h1>
+            <p>Boa parte dos pesquisadores da área defendem que não é aceitável se referir à noção de sexo e sexualidade como iguais/parecidos. A palavra sexo está ligada à anatomia, aos ógãos sexuais, e é utilizada para distinguir as diferentes biologias do corpo feminino e masculino, da mesma forma, refere-se ao ato sexual (SENEM & CARAMASCHI, 2017). De acordo com Maia (2010, p. 2), “sexualidade é o nome que damos para o aspecto da  vida humana  que  inclui  as  sensações  corpóreas  e  subjetivas  que  envolvem,  também,  as questões  emocionais”,  ou  seja,  a sexualidade humana não se trata apenas da prática sexual para fins recreativos ou reprodutivos, mas de relações de afeto, autoconhecimento, religião, cultura, questões de gênero, orientação sexual, prazer e reprodução, e é particular de cada indivíduo, variando conforme a época e a cultura. A sexualidade é complexa e inclui aspectos naturais, sociais, psicológicos, espirituais, religiosos, políticos, legais, históricos, éticos e culturais, que se desenvolvem ao longo da vida. Trata-se de vivências pessoais e subjetivas e faz parte da intimidade e privacidade humanas. É, também, uma construção social, já que varia dentro de crenças, práticas, comportamentos e identidades. A possibilidade de ter controle sobre o próprio corpo relaciona sexualidade, gênero e poder, e as suas características políticas e sociais (UNESCO, UNAIDS, UNFPA, UNICEF, UN Women & WHO, 2018). </p>
+               <p>Em 2022, uma pesquisa coordenada pelo Cenpec e pela Ação Educativa, realizada pelo Centro de Estudos em Opinião Pública (Cesop/Unicamp) e Instituto Datafolha, entrevistou 2.090 pessoas de 16 a 24 anos em todo o país sobre questões consideradas polêmicas relativas à política educacional, entre elas a abordagem de questões relacionadas à educação em gênero e sexualidade.</p>
+                
+                
+                                <img class="img"src="Img/educ.jpg" width="600"> </br> </br>
+                
+                <p>
+                Fonte: Elaboração própria com dados da pesquisa Nacional  “Educação, Valores e Direitos”(2022)</p> <br><br>
+                <p>Segundo o International Technical Guidance on Sexuality Education - An Evidence-Informed Approach (Orientação Técnica Internacional sobre Educação Sexual: uma abordagem baseada em evidências), Educação Sexual constitui-se de um processo de ensino e aprendizagem abrangente, organizado em um currículo sobre os aspectos cognitivos, emocionais, físicos e sociais da sexualidade. Com o propósito de preparar as crianças e jovens com saberes, habilidades, comportamentos e princípios que os habilitarão a promover sua própria saúde, bem-estar e dignidade, e construir relações sociais e sexuais respeitosas; refletir sobre o impacto de suas decisões no seu próprio bem-estar e no dos demais, e, compreender e certificar a proteção dos seus direitos ao longo da vida (UNESCO, UNAIDS, UNFPA, UNICEF, UN Women & WHO, 2018). </p>
+                
+            <p>No ensino de Educação Sexual é necessário que os educadores passem por processos formativos que os preparem para lidar com os alunos e as próprias questões que já carregam, suas inseguranças, preconceitos e a noção da sociedade onde estão inseridos, cujo sexo ainda é um assunto delicado. A sexualidade, por estar relacionada a sentimentos e valores morais, pode facilitar no processo de inclusão de pessoas e na melhora da comunicação e da proximidade entre as crianças. A partir do ensino, é essencial estimular o respeito a todos os indivíduos independente de profissão ou orientação sexual e ter um espaço aberto de discussão e aprendizagem para que os alunos formem suas próprias opiniões, a partir das noções apresentadas pelos professores (FIGUEIRÓ, 2003).</p>
+            <br>
+                 Na primeira infância, a socialização intrafamiliar é intrínseca ao processo de desenvolvimento psicossocial infantil. No entanto, a família nem sempre garante a proteção e os meios necessários para o desenvolvimento saudável da criança. Ainda, a primeira infância representa o início da socialização por meio da inserção nas instituições escolares, nesse sentido, considerou-se, neste estudo,
+         a escola como um local privilegiado para identificar, denunciar e prevenir as situações de violência sexual na primeira infância. (FREITAS, ROMITE. 2014).
+            <br>
+            <br>    
+         <p>Abordar Educação Sexual nas escolas é fornecer uma rede de apoio a crianças advindas de todos os contextos sociais, ato que proporciona noções de higiene, empatia e de autocuidado, tendo em vista que o abuso intrafamiliar é o mais recorrente no Brasil. </p>
+                <p>Tratar de  sexualidade no Ensino Fundamental requer do educador formação, a fim de que se sinta seguro para transmitir informações corretas e assertivas sobre as  implicações da Educação Sexual (RODRIGUES & WECHSLER, 2014).  De 3 a 5 anos, as crianças começam a demonstrar alguns comportamentos relacionados a sua própria sexualidade e que precisam ser trabalhados por meio do diálogo para que a criança tenha abertura para aprender e para construir novas opiniões e conhecimentos acerca do assunto. </p>
+                <p>As dificuldades encontradas pelos educadores são diversas, como questões pessoais, falta de recursos metodológicos ou falta de segurança para lidar com o assunto. Nesse sentido, as formações periódicas desses profissionais é de extrema importância para melhor conservar a imparcialidade profissional, mantê-los informados e garantir que possam passar o conhecimento para as crianças de maneira mais fluida (RODRIGUES & WECHSLER, 2014).</p>
+                <p>De acordo com a faixa etária, a Educação Sexual deve ser abordada desde a infância. Os conteúdos evoluem com o passar do amadurecimento da criança, visto que cada um tem sua sexualidade, visão de mundo e de si próprio (SILVA &, BIZELLI, 2022.  As crianças precisam de um direcionamento apropriado para crescerem de forma saudável, por se basearem em suas experiências e observações, o ambiente em que são criadas influencia diretamente nas suas atitudes e pensamentos (SILVA &, BIZELLI, 2022). </p>
+                <p>Desse modo, é necessário que os pais/responsáveis e a comunidade escolar estejam bem informados a respeito das perspectivas apresentadas às crianças  e do comportamento da criança perante elas. A postura adotada pelos pais/responsáveis deve ser a de  responder às questões das crianças até sanar sua curiosidade, a partir  de materiais e linguagem apropriados à idade (RODRIGUES & WECHSLER, 2014). </p>
+                <p>As crianças não são capazes de entender sozinhas todas as questões relativas à sexualidade, portanto ensiná-las é auxiliá-las a agir com responsabilidade no que diz respeito a sua própria conduta e com o corpo do outro. Um bom trabalho em conjunto, realizado entre pais/responsáveis e comunidade escolar, requer um ensino aprofundado que gera reflexões sobre temas gerais ou específicos que envolvem a sexualidade humana (RODRIGUES & WECHSLER, 2014). </p>
+                <p>Muitos pais acreditam que Educação Sexual se trata apenas do ensino em sala de aula, abrangendo questões biológicas e discussões sobre os perigos que envolvem a sexualidade, no entanto, trata-se de  uma crença equivocada, uma vez que a Educação Sexual acontece desde o nascimento da criança (RODRIGUES & WECHSLER, 2014). O ambiente familiar precisa ser um lugar seguro e aberto a uma comunicação respeitosa e de confiança entre a criança e os responsáveis, sendo  uma rede de apoio para esclarecer dúvidas, relatar possíveis situações e resolver diferenças de maneira harmoniosa. Nesse ambiente, a Educação Sexual tem como foco ampliar o conhecimento da criança de modo a fazê-la expandir seus conhecimentos e opiniões a fim de conhecer melhor a si próprio. (RODRIGUES & WECHSLER, 2014).</p>
+                <p> Mesmo em ambientes em que as crianças tenham um porto seguro, é possível que ocorram situações de abuso; um crime silencioso que pode muitas vezes passar despercebido. Por meio da Educação Sexual, os profissionais preparados podem identificar atitudes suspeitas, observando o comportamento do aluno e até mesmo em desenhos. A relação de poder que o adulto exerce sobre a criança e a confiança que a criança tem pelo adulto, em situações de risco, constituem a  base do abuso intrafamiliar. Em casos de abuso, o adulto se aproveita para predar a vítima e sair ileso e por se tratar de uma pessoa próxima da criança, usa de seu vínculo para manipular a vítima. Os agressores não seguem um padrão de vida, aparência, hábitos e nem trejeitos, qualquer pessoa pode ser um abusador, tanto aqueles que cabem na visão  estereotipada acerca de quem é um abusador, quanto aqueles que são considerados pessoas comuns, ou até mesmo boas pessoas (MOURA, MAKSOUD, MARQUES, 2020). </p>
+                <p>Ensinar às crianças noções sobre sexualidade os torna mais capacitados para identificar um abuso, a rede de apoio faz com que essa criança se sinta segura para relatar a situação que pode ter ocorrido com si mesma ou com outras crianças. Em situações de abuso, obtém-se </p>
+                
+                                <img src="Img/Abuso.jpg" width="600">
+                
+                <p>Fonte: Elaboração própria com dados das Secretarias Estaduais de Segurança Pública e/ou Defesa Social; Observatório de Análise Criminal / NAT / MPAC; Coordenadoria de Informações Estatísticas e Análises Criminais - COINE/RN; Instituto de Segurança Pública/RJ (ISP); Instituto Brasileiro de Geografia e Estatística (IBGE); Fórum Brasileiro de Segurança Pública (2022).</p>
+                <p>De acordo com o Anuário Brasileiro de Segurança Pública 2022, “76,5% dos estupros acontecem dentro de casa” dado que revela que o abuso intrafamiliar é o mais comum no Brasil, nesses casos, através da educação sexual professores e profissionais capacitados podem perceber sinais de abuso e observar melhor a criança, tal qual a criança pode encontrar na comunidade escolar um lugar seguro para relatar possíveis situações. </p>
+                   
         </div>
-        
-        <!-- Você pode adicionar quantos "content-box" quiser -->
+
+
     </div>
+
 </body>
+
 </html>

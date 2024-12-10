@@ -1,0 +1,285 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais da navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #668dd7;
+    /* Cor de fundo */
+    padding: 1rem 1rem;
+    /*Espaçamento interno */
+    */
+    /* padding: 10px 20px; */
+    position: relative;
+}
+
+/* Estilo do logo */
+.logo {
+    color: #ffffff;
+    /* Cor do texto */
+    font-size: 1.5rem;
+    /* Tamanho da fonte */
+    text-decoration: none;
+    /* Remove sublinhado */
+    font-family: 'Arch', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    max-width: 100%;
+}
+
+/* Estilo dos links de navegação */
+.Links {
+    display: flex;
+    align-items: center;
+    font-family: 'Arch', sans-serif;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-itens {
+    list-style: none;
+    /* Remove marcadores */
+    display: flex;
+    /* Alinha itens em linha */
+    padding: 0;
+    /* Remove padding */
+    margin: 0;
+    /* Remove margin */
+    gap
+}
+
+.nav-itens li {
+    margin-right: 10 px;
+    /* Espaçamento entre itens */
+}
+
+/* .nav-itens li a {
+text-decoration: none;
+color: #007BFF;
+font-weight: bold;
+} */
+
+.nav-itens a {
+    color: #ffffff;
+    /* Cor do texto */
+    text-decoration: none;
+    /* Remove sublinhado */
+    transition: color 0.3s;
+    /* Efeito de transição suave */
+    padding: 5px 10px;
+    /* Aumenta o espaço ao redor do texto, você pode ajustar os valores */
+    display: inline-block;
+    /* Garante que o link seja tratado como um bloco para que o padding tenha efeito */
+
+
+}
+
+.nav-itens a:hover {
+    color: black;
+    /* Cor ao passar o mouse */
+    background-color: #a891eb;
+    padding: 5px 15px;
+    /* Aumenta o tamanho do campo ao passar o mouse */
+    border-radius: 0.25rem;
+    /* Bordas arredondadas */
+}
+
+/* Estilo do botão de login */
+.login {
+    background-color: #a891eb;
+    /* Cor doFundo  */
+    color: #ffffff;
+    /* Cor do texto verde */
+    padding: 0.375rem 0.75rem;
+    /* Espaçamento do botão */
+    border-radius: 0.25rem;
+    /* Bordas arredondadas */
+    cursor: pointer;
+    /* Muda o cursor */
+    transition: background-color 0.3s, color 0.3s;
+    /* Transição suave */
+    font-family: 'Arch', sans-serif;
+    border: none;
+}
+
+.login:hover {
+    background-color: #fffa7e;
+    /* Fundo verde ao passar o mouse */
+    color: #000000;
+    /* Cor do texto branco ao passar o mouse */
+}
+
+p {
+    font-family: 'Open-Sans', sans-serif;
+}
+
+/* Ícone de menu */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+
+/* #login-button {
+    display: inline-block;
+} */
+
+#search-box,
+#search-label {
+    display: none;
+}
+
+/* Responsividade: esconde o menu em telas menores */
+@media (max-width: 768px) {
+    .nav-itens {
+        list-style: none;
+        /* Remove marcadores */
+        display: flex;
+        /* Alinha itens em linha */
+        padding: 0;
+        /* Remove padding */
+        margin: 0;
+        /* Remove margin */
+        flex-direction: column;
+    }
+
+    #search-box {
+        display: inline-block;
+        /* Exibe para resoluções maiores */
+    }
+
+    .Links {
+        display: none;
+        /* Esconde a barra de navegação */
+        position: absolute;
+        top: 108px;
+        left: 0;
+        /* Posiciona o menu à esquerda */
+        background-color: #ffffff;
+        flex-direction: column;
+        /* Organiza os itens em coluna */
+        align-items: flex-start;
+        /* Alinha os itens à esquerda */
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-left: 0;
+        /* Garante alinhamento à esquerda */
+    }
+
+    .Links.active {
+        display: flex;
+        /* Exibe o menu ao clicar no gancho */
+    }
+
+    .Links a {
+        display: block;
+        /* Força os links a serem exibidos como blocos */
+        width: 100%;
+        /* Garante que cada link ocupe a largura total do contêiner */
+        padding: 10px 0;
+        /* Espaçamento vertical entre os links */
+        text-align: left;
+        /* Alinha o texto à esquerda */
+        text-decoration: none;
+        /* Remove sublinhado */
+        color: #000000;
+        /* Define a cor do texto */
+        box-sizing: border-box;
+        /* Garante que o padding não quebre o layout */
+        flex-direction: row;
+        /* Organiza o conteúdo na vertical */
+    }
+
+    .menu-icon {
+        display: block;
+        /* Exibe o ícone de menu */
+    }
+}
+
+
+
+@font-face {
+    font-family: 'LoveloLine';
+    src: url('fonts/Lovelo-LineBold.woff') format('woff'),
+        url('fonts/Lovelo-LineBold.woff2') format('woff2'),
+        url('fonts/Lovelo-LineLight.woff') format('woff'),
+        url('fonts/Lovelo-LineLight.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'LoveloLine', sans-serif;
+}
+
+@font-face {
+    font-family: 'Arch';
+    src: url('font/Arch.woff') format('woff'),
+        url('font/Arch.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'LoveloLine', sans-serif;
+}
+
+body {
+    background-image: url('Img/Fundo.jpg');
+    /* Caminho da imagem */
+    background-size: cover;
+    /* A imagem vai cobrir toda a tela */
+    background-position: center;
+    /* Centraliza a imagem */
+    background-repeat: no-repeat;
+    /* Impede a repetição da imagem */
+}
+
+
+
+
+/* Estilo do Container Infinito */
+.infinite-container {
+    display: flex;
+    flex-direction: column;
+    /* Organiza o conteúdo na vertical */
+    align-items: center;
+    /* Centraliza os itens horizontalmente */
+    padding: 20px;
+    min-height: 100vh;
+    /* Garante que o container tenha pelo menos a altura da tela */
+    overflow-y: auto;
+    /* Permite a rolagem vertical */
+    background-color: #f4f4f4;
+    height: auto;
+    /* Faz o container crescer conforme o conteúdo */
+}
+
+/* Estilo das Caixas de Conteúdo */
+.content-box {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
+    width: 80%;
+    /* Controla a largura das caixas de conteúdo */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .content-box {
+        width: 90%;
+        /* Ajusta a largura das caixas em telas pequenas */
+    }
+}

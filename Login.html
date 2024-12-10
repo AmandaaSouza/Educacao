@@ -66,7 +66,7 @@
 
         /* Efeito de hover para o botão de voltar */
         .btn-voltar:hover {
-            background: #68d3be;
+            background: #668dd7;
             /* Muda a cor de fundo quando o botão é sobrevoado */
         }
 
@@ -198,7 +198,7 @@
         }
     </style>
 
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 </head>
 
@@ -210,7 +210,7 @@
         <h1>Faça seu login</h1>
         <p>
             <label>E-mail </label>
-            <input type="text"id="email" name="email">
+            <input type="text" id="email" name="email">
         </p>
         <p>
             <label>Senha </label>
@@ -228,7 +228,7 @@
 </body>
 <script>
     // Função para enviar os dados do formulário via Fetch API
-    document.getElementById('buttonEntrar').addEventListener('click', async function() {
+    document.getElementById('buttonEntrar').addEventListener('click', async function () {
         const email = document.getElementById('email').value;
         const senha = document.getElementById('senha').value;
 
@@ -238,20 +238,37 @@
         };
 
         try {
-    // Envia a requisição POST para o servidor Node.js usando Axios
-    const response = await axios.post('https://serverapi-0arf.onrender.com/login', data);
+            // Envia a requisição POST para o servidor Node.js usando Axios
+            const response = await axios.post('https://serverapi-0arf.onrender.com/login', data);
 
-    // Se a requisição for bem-sucedida, redireciona para a página index.html
-    if (response.status === 200) {
-        window.location.href = 'index.html';
-    }
-    if(response.status === 401){
-        alert ("Acesso não autorizado");
-    }
-} catch (error) {
-    console.error('Erro na requisição:', error);
-    alert('Erro ao processar os dados.');
-}
+            // Se a requisição for bem-sucedida, redireciona para a página index.html
+            if (response.status === 200) {
+
+                const responseusuario = await axios.post('https://serverapi-0arf.onrender.com/getInformacoeslogin', data);
+
+                //armazenar no cache as informacoes do usuario e redirecionar para index.html
+                // Armazena informações no localStorage
+                localStorage.setItem('userLoggedIn', 'true');
+                localStorage.setItem('userEmail', email);
+                localStorage.setItem('userNome', responseusuario.data.nome);
+                console.log('Usuário logado e informações salvas no cache.');
+                window.location.href = 'index.html';
+            }
+            if (response.status === 401) { 
+                localStorage.setItem('userLoggedIn', 'false');
+                alert("Acesso não autorizado");
+            }
+        } catch (error) {
+            if (error.response && error.response.status === 401) {
+                localStorage.setItem('userLoggedIn', 'false');
+                alert("Acesso não autorizado");
+            }
+            else {
+                console.error('Erro na requisição:', error);
+                alert('Erro ao processar os dados.');
+            }
+
+        }
     });
 </script>
 
